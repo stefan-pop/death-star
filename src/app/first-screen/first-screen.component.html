@@ -1,0 +1,17 @@
+<div class="first-screen">
+    <a routerLink="second-screen">Neue Berechnung</a>
+    <a (click)="clearEntries()">Einträge löschen</a>
+    <br> <br>
+    <table>
+        <tr>
+            <th>Personen</th>
+            <th>Volumen der Planeten</th>
+        </tr>
+        <tr *ngFor="let entry of entries">
+            <td>
+                <span *ngFor="let person of entry.persons">{{person}}, </span>
+            </td>
+            <td>{{entry.volume}}</td>
+        </tr>
+    </table>
+</div>

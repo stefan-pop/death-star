@@ -1,0 +1,20 @@
+
+<div class="second-screen">
+
+    <div class="input">
+        <h2>Suche in Personen-Datenbank</h2>
+        <input type="text" [ngModel]="name" (ngModelChange)="onChange($event)" placeholder="search">
+   
+        <ng-template [ngIf]="!resultCount">
+            <small>{{hint}}</small>
+        </ng-template>
+
+        <div *ngIf="peopleList.length" class="results">
+            <ul *ngIf="peopleList">
+                <li *ngFor="let person of peopleList" (click)="addEnemy(person)">{{person.name}}</li>
+            </ul>
+        </div>
+    </div>
+
+    <app-enemies [filteredEnemyList]="filteredEnemyList" ></app-enemies>
+</div>

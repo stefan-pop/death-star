@@ -1,0 +1,26 @@
+<div class="enemies">
+    <div class="content-wrapper">
+        <ul>
+            <li *ngFor="let enemy of filteredEnemyList">{{enemy.name}}</li>
+        </ul>
+
+        <p>Das Volumen der Planeten beträgt: <span class="result">{{volumesSum}}</span> </p>
+    
+        <div class="buttons">
+            <button 
+                (click)="calculateVolumes()" 
+                [disabled]="!filteredEnemyList.length"
+            >Volumen Berechnen
+            </button>
+
+            <button 
+                (click)="saveEntry()" 
+                [disabled]="!volumesSum"
+                routerLink="/first-screen"
+            > Berechnung Übernehmen
+            </button>
+        </div>
+    </div>
+</div>
+
+
